@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SOD2Compendium.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - State of Decay 2 Wiki</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121212162-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121212162-1');
+</script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7663070240723179",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <script>
+        var IsSubmitter = <%= (Session["Submitter"] != null).ToString().ToLower() %>;
+        
+      
+    </script>
+</head>
+<body>
+    <form runat="server" >
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">SOD2 DataNav</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li style="height:100%"><asp:Button ID="btnFBLogin" Height="100%" runat="server" Text="Login With Facebook" CssClass="btn btn-primary" OnClick="btnFBLogin_Click"/></li>
+                        
+
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Traits">Traits</a></li>
+                        <li><a runat="server" href="~/Guns">Guns</a></li>
+                        <li><a runat="server" href="~/HeroBonuses">Hero Bonuses</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <div>Got a suggestion or problem about the site? Join the <a href="https://discord.gg/XCS7Qpp">Discord</a>! </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <asp:ImageButton ID="btnPayPal" runat="server" OnClick="btnPayPal_Click" ImageUrl="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/>
+               
+                <p>&copy; <%: DateTime.Now.Year %> - Ioun Technologies LLC</p>
+
+
+            </footer>
+        </div>
+        <script>
+            $(document).ready(function () {
+                if(IsSubmitter == false){
+
+                    $('.form-control').each(function(){
+                        var text = '';
+                        if($(this).children('option[selected]').length > 0)text = $(this).children('option[selected]').text();                       
+                        else if($(this).text())text = $(this).text();
+                        else if($(this).val())text = $(this).val();
+                        else if($(this).children('input').length > 0){
+                            if(text = $(this).children('input')[0].checked)text = 'Yes';
+                            else text = 'No';
+                        }
+                        $(this).replaceWith('<div>' + text + '</div>')});
+                    $('span').each(function(){$(this).replaceWith('<span><b>' + $(this).text() + '</b><span>')});
+                    $('#MainContent_btnCancel').prop('value','Back');
+
+                }
+                
+            });x
+        </script>
+       
+    </form>
+
+
+</body>
+</html>

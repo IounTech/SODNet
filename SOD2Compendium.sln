@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOD2Compendium", "SOD2Compendium\SOD2Compendium.csproj", "{7B6F70CE-09DE-4354-876D-1ABF34FFE4CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B6F70CE-09DE-4354-876D-1ABF34FFE4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B6F70CE-09DE-4354-876D-1ABF34FFE4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B6F70CE-09DE-4354-876D-1ABF34FFE4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B6F70CE-09DE-4354-876D-1ABF34FFE4CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {815B840C-A813-4B9B-B402-5DCC57438AC3}
+	EndGlobalSection
+EndGlobal
