@@ -22,6 +22,8 @@ namespace SOD2Compendium.Classes
         public static Dictionary<int, PrebuiltFacility> PrebuiltFacilities = null;
         public static Dictionary<int, MeleeType> MeleeTypes = null;
         public static Dictionary<int, Melee> Melees = null;
+        public static Dictionary<int, Mod> Mods = null;
+        public static Dictionary<int, ModFile> ModFiles = null;
 
         public static void Update()
         {
@@ -43,7 +45,10 @@ namespace SOD2Compendium.Classes
                     MeleeTypes = MeleeType.GetAllMeleeTypes();
                     Melees = Melee.GetAllMelees();
                     PrebuiltFacilities = PrebuiltFacility.GetAllPrebuiltFacilities();
+                    Mods = Mod.GetAllMods();
+                    ModFiles = ModFile.GetAllModFiles();
                     AttachPrebuiltsToBases();
+                    AttachFilesToMods();
                     IsDirty = false;
                 }
            
@@ -60,6 +65,15 @@ namespace SOD2Compendium.Classes
             {
                 int intBaseID = Prebuilt.Value.intBaseID;
                 Bases[intBaseID].lclsPrebuiltFacilities.Add(Prebuilt.Key,Prebuilt.Value);
+            }
+        }
+
+        public static void AttachFilesToMods()
+        {
+            foreach (KeyValuePair<int, ModFile> ModFile in ModFiles)
+            {
+                int intModID = ModFile.Value.intModID;
+                Mods[intModID].lclsModFiles.Add(ModFile.Key, ModFile.Value);
             }
         }
 

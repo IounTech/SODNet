@@ -7,5 +7,6 @@
     <a href="Items.aspx"><h2>Items</h2></a>
     <a href="Bases.aspx"><h2>Bases</h2></a>
     <a href="Facilities.aspx"><h2>Facilities</h2></a>
+    <a href="Mods.aspx"><h2>Game Mods</h2></a>
 
 </asp:Content>

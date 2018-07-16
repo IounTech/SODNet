@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddMod.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Bases.aspx" />
     <Content Include="Contact.aspx" />
@@ -216,9 +217,11 @@
     <Content Include="ModifyGuns.aspx" />
     <Content Include="ModifyHeroBonus.aspx" />
     <Content Include="ModifyItem.aspx" />
+    <Content Include="ModifyMod.aspx" />
     <Content Include="ModifyPrebuiltFacility.aspx" />
     <Content Include="ModifyTraitEffects.aspx" />
     <Content Include="ModifyTraits.aspx" />
+    <Content Include="Mods.aspx" />
     <Content Include="PrebuiltFacilities.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -250,6 +253,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="Traits.aspx" />
+    <Content Include="ViewMod.aspx" />
     <Content Include="ViewScreenshot.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -257,6 +261,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddMod.aspx.cs">
+      <DependentUpon>AddMod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMod.aspx.designer.cs">
+      <DependentUpon>AddMod.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -295,6 +306,8 @@
     <Compile Include="Classes\Map.cs" />
     <Compile Include="Classes\Melee.cs" />
     <Compile Include="Classes\MeleeType.cs" />
+    <Compile Include="Classes\Mod.cs" />
+    <Compile Include="Classes\ModFile.cs" />
     <Compile Include="Classes\PrebuiltFacility.cs" />
     <Compile Include="Classes\Size.cs" />
     <Compile Include="Classes\SocialAPI.cs" />
@@ -388,6 +401,13 @@
     <Compile Include="ModifyItem.aspx.designer.cs">
       <DependentUpon>ModifyItem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModifyMod.aspx.cs">
+      <DependentUpon>ModifyMod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModifyMod.aspx.designer.cs">
+      <DependentUpon>ModifyMod.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModifyPrebuiltFacility.aspx.cs">
       <DependentUpon>ModifyPrebuiltFacility.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -408,6 +428,13 @@
     </Compile>
     <Compile Include="ModifyTraits.aspx.designer.cs">
       <DependentUpon>ModifyTraits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mods.aspx.cs">
+      <DependentUpon>Mods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mods.aspx.designer.cs">
+      <DependentUpon>Mods.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrebuiltFacilities.aspx.cs">
       <DependentUpon>PrebuiltFacilities.aspx</DependentUpon>
@@ -442,6 +469,13 @@
     </Compile>
     <Compile Include="Traits.aspx.designer.cs">
       <DependentUpon>Traits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMod.aspx.cs">
+      <DependentUpon>ViewMod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewMod.aspx.designer.cs">
+      <DependentUpon>ViewMod.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewScreenshot.aspx.cs">
       <DependentUpon>ViewScreenshot.aspx</DependentUpon>
