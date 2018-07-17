@@ -37,7 +37,7 @@ namespace SOD2Compendium {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDescription;
+        protected global::System.Web.UI.WebControls.Literal lblDescription;
         
         /// <summary>
         /// rptFiles control.

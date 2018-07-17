@@ -11,7 +11,7 @@
                       <a href="ViewMod.aspx?ID=<%#  (Container.DataItem as SOD2Compendium.Classes.Mod).intID %>"><%# (Container.DataItem as SOD2Compendium.Classes.Mod).strName %> </a>
                     </td>
                     <td>
-                      <%# (Container.DataItem as SOD2Compendium.Classes.Mod).strDescription %>
+                      <%# (Container.DataItem as SOD2Compendium.Classes.Mod).strDescription.Replace("|lb|", "<br/>") %>
                     </td>
                     <td>
                         <%# (Container.DataItem as SOD2Compendium.Classes.Mod).intScore %> 

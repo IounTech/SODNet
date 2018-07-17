@@ -81,9 +81,13 @@
                         
 
                         <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Mods">Mods</a></li>
                         <li><a runat="server" href="~/Traits">Traits</a></li>
                         <li><a runat="server" href="~/Guns">Guns</a></li>
                         <li><a runat="server" href="~/HeroBonuses">Hero Bonuses</a></li>
+                        <li><a runat="server" href="~/Items">Items</a></li>
+                        <li><a runat="server" href="~/Bases">Bases</a></li>
+                        <li><a runat="server" href="~/Facilities">Facilities</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>

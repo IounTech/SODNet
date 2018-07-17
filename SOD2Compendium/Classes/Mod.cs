@@ -29,7 +29,7 @@ namespace SOD2Compendium.Classes
                 {
                     intID = (int)drRow["intModID"],
                     strName = (string)drRow["strName"],
-                    strDescription = (string)drRow["strDescription"],
+                    strDescription = ((string)drRow["strDescription"]),
                     intScore = (int)drRow["intScore"],
                     intStatusID = (int)drRow["intStatusID"],
                     intSubmitterID = (int)drRow["intSubmitterID"],

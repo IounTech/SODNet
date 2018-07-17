@@ -30,7 +30,7 @@ namespace SOD2Compendium
             {
                 txtName.Text = clsMod.strName;
                 txtDescription.Text = clsMod.strDescription;
-
+                Title = clsMod.strName;
                 rptFiles.DataSource = clsMod.lclsModFiles.Values;
                 rptFiles.DataBind();
             }

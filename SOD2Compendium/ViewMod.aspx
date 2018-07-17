@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1 runat="server" id="lblName"></h1>
     <asp:Image ID="imgScreenshot" runat="server" />
-    <p runat="server" id="lblDescription"></p>
+    <asp:Literal ID="lblDescription" runat="server"></asp:Literal>
+    
 
    <table class="table table-bordered">
         <tr><td>Name</td><td>Version</td><td>Description</td></tr>
@@ -17,7 +18,7 @@
                       <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strVersion %>
                     </td>
                     <td>
-                        <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strDescription %> 
+                        <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strDescription.Replace("|lb|", "<br/>") %> 
                     </td>
 
                 </tr>

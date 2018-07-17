@@ -25,8 +25,8 @@ namespace SOD2Compendium
         {
             clsMod = Classes.AllData.Mods[int.Parse(Request.QueryString["ID"])];
             lblName.InnerText = clsMod.strName;
-            lblDescription.InnerText = clsMod.strDescription;
-
+            lblDescription.Text = clsMod.strDescription.Replace("|lb|", "<br/>");
+            Title = clsMod.strName;
             rptFiles.DataSource = clsMod.lclsModFiles.Values;
             rptFiles.DataBind();
         }
