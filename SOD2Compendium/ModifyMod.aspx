@@ -10,7 +10,7 @@
     
 
     <table class="table table-bordered">
-        <tr><td>Name</td><td>Version</td><td>Description</td><td>Delete</td></tr>
+        <tr><td>Name</td><td>Version</td><td>Description</td><td>Save</td><td>Delete</td></tr>
         <asp:Repeater ID="rptFiles" runat="server" OnItemCommand="rptFiles_ItemCommand">
             <ItemTemplate>
                 <tr>
@@ -19,13 +19,16 @@
                     <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strName %>
                     </td>
                     <td>
-                      <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strVersion %>
+                      <asp:TextBox ID="txtVersion" runat="server" Text="<%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strVersion %>"></asp:TextBox>
                     </td>
                     <td>
-                        <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strDescription %> 
+                       <asp:TextBox ID="txtDescription" runat="server" Text=" <%# (Container.DataItem as SOD2Compendium.Classes.ModFile).strDescription %> "></asp:TextBox>
                     </td>
                     <td>
-                      <asp:LinkButton ID="btnDelete" runat="server" Text="Delete" CommandName="Delete" CommandArgument="<%# (Container.DataItem as SOD2Compendium.Classes.ModFile).intID %>" CssClass="btn btn-success" OnClick="btnDelete_Click1"/>
+                      <asp:LinkButton ID="btnSave" runat="server" Text="Save" CommandName="Save" CommandArgument="<%# (Container.DataItem as SOD2Compendium.Classes.ModFile).intID %>" CssClass="btn btn-success" OnClick="btnSave_Click1"/>
+                    </td>
+                    <td>
+                      <asp:LinkButton ID="btnDelete" runat="server" Text="Delete" CommandName="Delete" CommandArgument="<%# (Container.DataItem as SOD2Compendium.Classes.ModFile).intID %>" CssClass="btn btn-danger" OnClick="btnDelete_Click1"/>
                     </td>
 
                 </tr>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MainUtilitiesLibrary;
+using SOD2Compendium.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,7 +33,16 @@ namespace SOD2Compendium
 
         protected void rptFiles_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+
+
             Classes.ModFile clsModFile = clsMod.lclsModFiles[int.Parse(e.CommandArgument.ToString())];
+           
+            MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
+            List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
+            lclsParameters.Add(new CStoredProcedureParameter("@intModID", clsModFile.intModID));
+            MDatabaseUtilities.ExecuteStoredProcedure("uspIncrementModScore", lclsParameters.ToArray());
+            Classes.AllData.IsDirty = true;
+
             string header = "attachment; filename=" + clsModFile.strName;
             Response.Clear();
             FileInfo fiFile = new FileInfo(clsModFile.strLocation);

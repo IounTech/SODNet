@@ -17,6 +17,7 @@ namespace SOD2Compendium
         {
 
             clsMod = Classes.AllData.Mods[int.Parse(Request.QueryString["ID"])];
+
             if (Session["Submitter"] == null || ((Classes.Submitter)Session["Submitter"]).intID != clsMod.intSubmitterID)
             {
                 Response.Redirect("ViewMod.aspx?ID=" + clsMod.intID);
@@ -39,19 +40,44 @@ namespace SOD2Compendium
        
         protected void rptFiles_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            Classes.ModFile clsModFile = clsMod.lclsModFiles[int.Parse(e.CommandArgument.ToString())];
-            MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
-            List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
-            lclsParameters.Add(new CStoredProcedureParameter("@intModFileID", int.Parse(e.CommandArgument.ToString())));
-            MDatabaseUtilities.ExecuteStoredProcedure("uspDeleteModFile", lclsParameters.ToArray());
+            if (e.CommandName == "Delete")
+            {     
+                Classes.ModFile clsModFile = clsMod.lclsModFiles[int.Parse(e.CommandArgument.ToString())];
+                MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
+                List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
+                lclsParameters.Add(new CStoredProcedureParameter("@intModFileID", int.Parse(e.CommandArgument.ToString())));
+                MDatabaseUtilities.ExecuteStoredProcedure("uspDeleteModFile", lclsParameters.ToArray());
+                Classes.AllData.IsDirty = true;
+                FileInfo fiFile = new FileInfo(clsModFile.strLocation);
+                if(fiFile.Exists)fiFile.Delete();
+            }
+            else if(e.CommandName == "Save")
+            {
+                MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
+                List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
+                lclsParameters.Add(new CStoredProcedureParameter("@intModFileID", int.Parse(Request.QueryString["ID"])));
+                lclsParameters.Add(new CStoredProcedureParameter("@strDescription", ((System.Web.UI.WebControls.TextBox)e.Item.Controls[3]).Text));
+                lclsParameters.Add(new CStoredProcedureParameter("@strVersion", ((System.Web.UI.WebControls.TextBox)e.Item.Controls[1]).Text));
+                MDatabaseUtilities.ExecuteStoredProcedure("uspUpdateModFile", lclsParameters.ToArray());
+                Classes.AllData.IsDirty = true;
+            }
+
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            Mod clsMod = AllData.Mods[int.Parse(Request.QueryString["ID"])];
             MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
             List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
             lclsParameters.Add(new CStoredProcedureParameter("@intModID", int.Parse(Request.QueryString["ID"])));
             MDatabaseUtilities.ExecuteStoredProcedure("uspDeleteMod", lclsParameters.ToArray());
+
+            foreach(ModFile clsModFile in clsMod.lclsModFiles.Values)
+            {
+                FileInfo fiFile = new FileInfo(clsModFile.strLocation);
+                if (fiFile.Exists) fiFile.Delete();
+            }
+
             Classes.AllData.IsDirty = true;
             Response.Redirect("Mods.aspx");
         }
@@ -70,8 +96,11 @@ namespace SOD2Compendium
                 if (hpfFile.FileName != "")
                 {
 
-
-                    string strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\" + hpfFile.FileName;
+#if DEBUG
+                    string strFileLocation = @"C:\Dev\ModFiles\" + txtName.Text + @"\" + hpfFile.FileName;
+#else
+                     string strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\"+ hpfFile.FileName;
+#endif
                     FileInfo fiFile = new FileInfo(strFileLocation);
                     fiFile.Directory.Create();
                     hpfFile.SaveAs(strFileLocation);
@@ -101,6 +130,11 @@ namespace SOD2Compendium
         }
 
         protected void btnDelete_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSave_Click1(object sender, EventArgs e)
         {
 
         }

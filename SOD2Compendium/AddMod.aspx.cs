@@ -30,7 +30,12 @@ namespace SOD2Compendium
             {
                 foreach(HttpPostedFile hpfFile in fuModFiles.PostedFiles)
                 {
-                    string strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\"+ hpfFile.FileName;
+#if DEBUG
+                    string strFileLocation = @"C:\Dev\ModFiles\" + txtName.Text + @"\" + hpfFile.FileName;
+#else
+                     string strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\"+ hpfFile.FileName;
+#endif
+                  
                     FileInfo fiFile = new FileInfo(strFileLocation);
                     fiFile.Directory.Create();
                     hpfFile.SaveAs(strFileLocation);

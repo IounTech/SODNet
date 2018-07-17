@@ -22,7 +22,9 @@ namespace SOD2Compendium
             Classes.AllData.Update();
             SocialAPI fbAPI = new SocialAPI();
             string code = Request.QueryString["code"];
-
+#if DEBUG
+            Session["Submitter"] = Submitter.GetSubmitterFromFBID(Hidden.TestFBID, Hidden.TestFBName);
+#endif
 
             if (Session["Submitter"] == null)
             {
