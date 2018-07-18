@@ -14,6 +14,7 @@ namespace SOD2Compendium.Classes
         public string strDescription;
         public string strScreenshotLocation;
         public int intScore;
+        
         public int intStatusID;
         public int intSubmitterID;
         public Dictionary<int, ModFile> lclsModFiles = new Dictionary<int, ModFile>();

@@ -53,9 +53,11 @@ namespace SOD2Compendium
             }
             else if(e.CommandName == "Save")
             {
+                ModFile clsModFile = clsMod.lclsModFiles[clsMod.lclsModFiles.Keys.ToArray()[(e.Item.ItemIndex)]];
                 MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
+
                 List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
-                lclsParameters.Add(new CStoredProcedureParameter("@intModFileID", int.Parse(Request.QueryString["ID"])));
+                lclsParameters.Add(new CStoredProcedureParameter("@intModFileID", clsModFile.intID));
                 lclsParameters.Add(new CStoredProcedureParameter("@strDescription", ((System.Web.UI.WebControls.TextBox)e.Item.Controls[3]).Text));
                 lclsParameters.Add(new CStoredProcedureParameter("@strVersion", ((System.Web.UI.WebControls.TextBox)e.Item.Controls[1]).Text));
                 MDatabaseUtilities.ExecuteStoredProcedure("uspUpdateModFile", lclsParameters.ToArray());
