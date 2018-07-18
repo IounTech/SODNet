@@ -14,6 +14,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121212162-1"></script>
 <script>
@@ -64,7 +65,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+      
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">

@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="Mods" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Mods.aspx.cs" Inherits="SOD2Compendium.Mods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
       <h1>Mods<a href="AddMod.aspx"><span style="margin:4px" class="glyphicon glyphicon-plus"></span></a></h1>
-    
+    <div> How to install Mods:<br />
+    Loose assets go into %LocalAppData%\Packages\Microsoft.Dayton_8wekyb3d8bbwe\LocalState\StateOfDecay2\Saved\Cooked<br />
+    Paks go into %LocalAppData%\Packages\Microsoft.Dayton_8wekyb3d8bbwe\LocalState\StateOfDecay2\Saved\Paks</div>
     <table class="table table-bordered">
         <tr><td><b>Name</b></td><td><b>Description</b></td><td><b>Downloads</b></td></tr>
         <asp:Repeater ID="rptMods" runat="server">

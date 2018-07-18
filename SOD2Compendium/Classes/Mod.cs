@@ -23,7 +23,7 @@ namespace SOD2Compendium.Classes
         public static Dictionary<int, Mod> GetAllMods()
         {
             Dictionary<int, Mod> lclsMods = new Dictionary<int, Mod>();
-            DataTable dtMods = MDatabaseUtilities.CreateDataTable("Select * from TMods where intStatusID <> 4 order by strName", Hidden.ExternalConnection);
+            DataTable dtMods = MDatabaseUtilities.CreateDataTable("Select * from TMods where intStatusID <> 4 order by intScore desc", Hidden.ExternalConnection);
             foreach (DataRow drRow in dtMods.Rows)
             {
                 Mod clsNewMod = new Mod
