@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewMod.aspx.cs" Inherits="SOD2Compendium.ViewMod" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    
+    
     <h1 runat="server" id="lblName"></h1>
     <asp:Image ID="imgScreenshot" runat="server" />
     <asp:Literal ID="lblDescription" runat="server"></asp:Literal>

@@ -1,0 +1,780 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MainUtilitiesLibrary
+</name>
+</assembly>
+<members>
+<member name="T:MainUtilitiesLibrary.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:MainUtilitiesLibrary.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:MainUtilitiesLibrary.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:MainUtilitiesLibrary.My.Resources.Resources.String1">
+<summary>
+  Looks up a localized string similar to .
+</summary>
+</member>
+<member name="M:MainUtilitiesLibrary.HeaderLabel.#ctor">
+ <summary>
+  Defaults to blank string
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.HeaderLabel.#ctor(System.String)">
+ <summary>
+ String Constructor
+ </summary>
+ <param name="strCaption">Header Text</param>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.CPerformanceTest.ToConsole">
+ ------------------------------------------------------------------------------------------
+ Name: ToConsole
+ ------------------------------------------------------------------------------------------
+ <summary> Writes the timers current value to the console with the name(If name is not blank) </summary>
+ <remarks> Format: (Name): (Time In Decimal Format) Seconds</remarks>
+ ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CPerformanceTest.PrintTestToString">
+ ------------------------------------------------------------------------------------------
+  Name: PrintTestToString
+  ------------------------------------------------------------------------------------------
+ <summary> Prints the test to string. </summary>
+ <returns>System.String.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.CList`1">
+ ------------------------------------------------------------------------------------------
+  Name: CList
+ ------------------------------------------------------------------------------------------
+ <summary> List-type object in which items can be referenced by index or string key</summary>
+ <remarks> Combines the functionality of a Dictionary and a List and allows for For Each loops</remarks>
+ ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.Add(`0)">
+ ------------------------------------------------------------------------------------------
+  Name: Add
+  ------------------------------------------------------------------------------------------
+ <summary> Adds the specified object to the list without a String identifier. </summary>
+ <param name="objValue">The object to add</param>
+ <remarks> String identifier(Key) defaults to 'Nothing', not a empty string </remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.Add(System.String,`0)">
+ ------------------------------------------------------------------------------------------
+  Name: Add
+  ------------------------------------------------------------------------------------------
+ <summary> Adds the specified object to the list with the specified String Identifier. </summary>
+ <param name="strString">The string identifier/Key</param>
+ <param name="objValue">The object to add</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.CList`1.Item(System.String)">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets or sets the element at the specified index. </summary>
+ <value>The item.</value>
+ <param name="strKey">The string indentifier(Key) of the element to get</param>
+ <remarks> ReadOnly </remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.CList`1.Values">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets the values of the CList as a normal list </summary>
+ <value>The values of the CList as a normal list</value>
+ <remarks> ReadOnly </remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.CList`1.Item(System.Int32)">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets the element at the specified index. </summary>
+ <value>The item.</value>
+ <param name="intIndex">The zero-based index of the element to get or set.</param>
+ <remarks> ReadOnly </remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.ContainsKey(System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: ContainsKey
+  ------------------------------------------------------------------------------------------
+ <summary> Determines whether the CList contains an entry with the specified String Identifier/Key. </summary>
+ <param name="strKey">The string key.</param>
+ <returns><c>true</c> if the specified CList contains an entry with the specified contains String Identifier/Key; otherwise, <c>false</c>.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.ContainsValue(`0)">
+ ------------------------------------------------------------------------------------------
+  Name: ContainsValue
+  ------------------------------------------------------------------------------------------
+ <summary> Determines whether the CList contains the specified object </summary>
+ <param name="objValue">The object value.</param>
+ <returns><c>true</c> if the specified CList contains the specified object; otherwise, <c>false</c>.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.Remove(System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: Remove
+  ------------------------------------------------------------------------------------------
+ <summary> Removes last object in the CList with the specified String Identifier/Key. </summary>
+ <param name="strKey">The String Identifier/Key of the object to remove.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.Remove(`0)">
+ ------------------------------------------------------------------------------------------
+  Name: Remove
+  ------------------------------------------------------------------------------------------
+ <summary> Removes the last occurance of the specified object. </summary>
+ <param name="objValue">The object to remove.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.CList`1.GetKey(`0)">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets the String Identifier/Key of the first instance of the specified object. </summary>
+ <param name="objValue">The object</param>
+ <value>The String Identifier/Key.</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.CList`1.GetKeyValuePair(System.String)">
+ ------------------------------------------------------------------------------------------
+ <summary> Gets the entire entry in the CList by the specified String Identifier/Key </summary>
+ <value>The CList entry as a KeyValuePair</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.OverwriteWith(`0)">
+ ------------------------------------------------------------------------------------------
+  Name: OverwriteWith
+  ------------------------------------------------------------------------------------------
+ <summary> Overwrites the CList's current entries with the specified object. </summary>
+ <param name="objValue">The object to add</param>
+ <remarks> Sets the String Identifier to 'Nothing'
+ Deletes any existing data in the CList.</remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.OverwriteWith(System.String,`0)">
+ ------------------------------------------------------------------------------------------
+  Name: OverwriteWith
+  ------------------------------------------------------------------------------------------
+ <summary> Overwrites the CList's current entries with the specified entry. </summary>
+ <param name="strKey">The String Identifier/Key.</param>
+ <param name="objValue">The object to add.</param>
+ <remarks>Deletes any existing data in the CList.</remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.OverwriteWith(System.Collections.Generic.KeyValuePair{System.String,`0})">
+ ------------------------------------------------------------------------------------------
+  Name: OverwriteWith
+  ------------------------------------------------------------------------------------------
+ <summary> Overwrites the CList's current entries with the specified entry. </summary>
+ <param name="kvpItem">The entry to add as a KeyValuePair</param>
+ <remarks>Deletes any existing data in the CList.</remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.OverwriteWith(`0[])">
+ ------------------------------------------------------------------------------------------
+  Name: OverwriteWith
+  ------------------------------------------------------------------------------------------
+ <summary> Overwrites the CList's current entries with the specified objects. </summary>
+ <param name="objValues">The objects to add as an Array</param>
+ <remarks> Sets the String Identifier to 'Nothing'
+ Deletes any existing data in the CList.</remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.OverwriteWith(System.Collections.Generic.KeyValuePair{System.String,`0}[])">
+ ------------------------------------------------------------------------------------------
+  Name: OverwriteWith
+  ------------------------------------------------------------------------------------------
+ <summary> Overwrites the CList's current entries with the specified entries. </summary>
+ <param name="kvpItems">The entries to add as an array of KeyValuePair</param>
+ <remarks>Deletes any existing data in the CList.</remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.op_Explicit(MainUtilitiesLibrary.CList{`0})~System.Collections.Generic.List{`0}">
+ ------------------------------------------------------------------------------------------
+  Name: operator op_Explicit
+  ------------------------------------------------------------------------------------------
+ <summary> Performs an explicit conversion from <see cref="T:MainUtilitiesLibrary.CList`1"/> to <see cref="T:System.Collections.Generic.List`1"/>. </summary>
+ <param name="CListToConvert">The CList to convert.</param>
+ <returns>The result of the conversion.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CList`1.op_Implicit(System.Collections.Generic.List{`0})~MainUtilitiesLibrary.CList{`0}">
+ ------------------------------------------------------------------------------------------
+  Name: operator op_Implicit
+  ------------------------------------------------------------------------------------------
+ <summary> Performs an implicit conversion from <see cref="T:System.Collections.Generic.List`1"/> to <see cref="T:MainUtilitiesLibrary.CList`1"/>. </summary>
+ <param name="ListToConvert">The list to convert.</param>
+ <returns>The result of the conversion.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.CDirectory">
+ ------------------------------------------------------------------------------------------
+  Name: CDirectory
+ ------------------------------------------------------------------------------------------
+ <summary> Class to help manage directory information</summary>
+ <remarks> Contains both the image as a bitmap, as well as the information for the image file</remarks>
+ ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.CDirectory.#ctor(System.IO.DirectoryInfo,System.Boolean)">
+ <summary>
+ Constructor for CDirectory
+ </summary>
+ <param name="diMainDirectory">Directory Info object being represented</param>
+ <param name="blnCreateIfNotExist">(Default = False)if set to true, the directory will be created if it doesnt already exist</param>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.CDirectory.#ctor(System.String,System.Boolean)">
+ <summary>
+ Constructor for CDirectory
+ </summary>
+ <param name="strMainDirectory"> String path to directory being represented</param>
+ <param name="blnCreateIfNotExist">(Default = False)if set to true, the directory will be created if it doesnt already exist</param>
+ <remarks></remarks>
+</member>
+<member name="T:MainUtilitiesLibrary.CImage">
+ ------------------------------------------------------------------------------------------
+  Name: CImage
+ ------------------------------------------------------------------------------------------
+ <summary> Class to help manage an image file</summary>
+ <remarks> Contains both the image as a bitmap, as well as the information for the image file</remarks>
+ ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.IsValidDate(System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: IsValidDate
+  ------------------------------------------------------------------------------------------
+ <summary> Determines whether a string is a valid date. </summary>
+ <returns><c>true</c> if the date can be successfuly parsed by <see cref="M:System.DateTime.TryParse(System.String,System.DateTime@)">DateTime.TryParse</see>; otherwise, <c>false</c>.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.FirstRow(System.Data.DataTable)">
+ ------------------------------------------------------------------------------------------
+  Name: FirstRow
+  ------------------------------------------------------------------------------------------
+ <summary> Returns the first row of the datatable </summary>
+ <returns>The 0th datarow</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.ClearAllTextBoxes(System.Windows.Forms.Form)">
+ ------------------------------------------------------------------------------------------
+  Name: ClearAllTextBoxes
+  ------------------------------------------------------------------------------------------
+ <summary> Clears all text boxes that are children of the form. </summary>
+ <remarks> UNTESTED </remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.DownloadFileToUser(System.Web.UI.Page,System.String,System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: DownloadFileToUser
+  ------------------------------------------------------------------------------------------
+ <summary> Downloads the file to user via the client browser. </summary>
+ <param name="strPath">The file path (excluding File Name).</param>
+ <param name="strFileName">Name of the file to send with extension.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.IsNullOrEmpty(System.Collections.IEnumerable)">
+ ------------------------------------------------------------------------------------------
+  Name: IsNullOrEmpty
+  ------------------------------------------------------------------------------------------
+ <summary> Determines whether this Ienumerable is nothing and has no members . </summary>
+ <returns><c>true</c> if [is null or empty] returns true; otherwise, <c>false</c>.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.ModifySize(System.Drawing.Font@,System.Single)">
+ ------------------------------------------------------------------------------------------
+  Name: ModifySize
+  ------------------------------------------------------------------------------------------
+ <summary> Modifies the size of the font by the specified amount. </summary>
+ <param name="sngAmountToModify">The amount to modify the font size by.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.ExtensionDefinitions.Sort(System.Data.DataTable@,System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: Sort
+  ------------------------------------------------------------------------------------------
+ <summary> Sorts the datatable by the specified column. </summary>
+ <param name="strColumnToSortBy">The name of the column to sort by.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="E:MainUtilitiesLibrary.FLoadingBar.ValueChanged">
+ ------------------------------------------------------------------------------------------
+ <summary>Occurs when the loading bar value is changed.</summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="E:MainUtilitiesLibrary.FLoadingBar.TextChanged">
+ ------------------------------------------------------------------------------------------
+ <summary>Occurs when the loading bar display text is changed.</summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.FLoadingBar.NumberOfItems">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets or sets the maximum value of the loading bar </summary>
+ <value>(Double)The maximum value of the loading bar.</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.FLoadingBar.dblValue">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets or sets the current value of the loading bar. </summary>
+ <value>(Double)The current value of the loading bar.</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.FLoadingBar.Display">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets or sets the title text. </summary>
+ <value>The title text</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.FLoadingBar.#ctor(System.Double)">
+ ------------------------------------------------------------------------------------------
+ <summary>Initializes a new instance of the <see cref="T:MainUtilitiesLibrary.FLoadingBar"/> class.</summary>
+ <param name="dblNumberOfItems">(Double)The maximum value of the loading bar.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.FLoadingBar.ModifyValue(System.Double)">
+ ------------------------------------------------------------------------------------------
+  Name: ModifyValue
+  ------------------------------------------------------------------------------------------
+ <summary> Modifies the current value of the loading bar. </summary>
+ <param name="dblAmountToModify">(Double)The amount to modify the value by</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.FLoadingBar.TakeStep">
+ ------------------------------------------------------------------------------------------
+  Name: TakeStep
+  ------------------------------------------------------------------------------------------
+ <summary> Increments the loading bar by 1% </summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.FLoadingBar.IsFinishedLoading">
+ ------------------------------------------------------------------------------------------
+  Name: IsFinishedLoading
+  ------------------------------------------------------------------------------------------
+ <summary> Checks if the current value and the maximum value of the loading bar are the same. </summary>
+ <remarks> Closes the form if true.</remarks>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.MGlobalConstants">
+ ------------------------------------------------------------------------------------------
+  Name: MGlobalConstants
+  ------------------------------------------------------------------------------------------
+ <summary>Module containing various practical constants</summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="F:MainUtilitiesLibrary.MGlobalConstants.intANCII_UPPERCASE_START">
+ <summary>The begining of the Uppercase alphabet on the ANCII chart(Inclusive)</summary>
+</member>
+<member name="F:MainUtilitiesLibrary.MGlobalConstants.intANCII_LOWERCASE_START">
+ <summary>The begining of the Lowercase alphabet on the ANCII chart(Inclusive)</summary>
+</member>
+<member name="F:MainUtilitiesLibrary.MGlobalConstants.intANCII_UPPERCASE_END">
+ <summary>The end of the Uppercase alphabet on the ANCII chart(Inclusive)</summary>
+</member>
+<member name="F:MainUtilitiesLibrary.MGlobalConstants.intANCII_LOWERCASE_END">
+ <summary>The end of the Uppercase alphabet on the ANCII chart(Inclusive)</summary>
+</member>
+<member name="F:MainUtilitiesLibrary.MGlobalConstants.dtmSQL_ZERO_DATE">
+ <summary>
+ The earliest date SQL can handle
+ </summary>
+</member>
+<member name="F:MainUtilitiesLibrary.MGlobalConstants.dicXMLEscapeValues">
+ <summary>
+ A dictionary of XML escape values
+ </summary>
+</member>
+<member name="T:MainUtilitiesLibrary.MDatabaseUtilities">
+ <summary>MDatabaseUtilities</summary>
+ <remarks>Collection of utilities that directly handle database calls</remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MDatabaseUtilities.CreateDataTable(System.String,System.String)">
+ <summary>
+ Creates a data table from the specified SQL Query string, and the return from the database.
+ </summary>
+ <param name="strSQL">The SQL string to send to the database.</param>
+ <returns></returns>
+ -----------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatabaseUtilities.CreateDataTable(System.String,MainUtilitiesLibrary.CStoredProcedureParameter[])">
+ <summary>
+ Creates the data table.
+ </summary>
+ <param name="strSQL">The string SQL.</param>
+ <param name="clsParameters">The CLS parameters.</param>
+ <returns></returns>
+ -----------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatabaseUtilities.AsyncMergeDatatableWithDBTable(System.String,System.Data.DataTable)">
+ ------------------------------------------------------------------------------------------
+  Name: MergeDatatableWithDBTable
+  ------------------------------------------------------------------------------------------
+ <summary> Merges the datatable with database table. </summary>
+ <param name="strTableName">Name of the string table.</param>
+ <param name="dtUpdatedTable">The data table updated table.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatabaseUtilities.LoadBoxFromDatabase(System.Windows.Forms.ListBox@,System.String,System.String,System.String,System.String)">
+ <summary>
+ Populates a list-type control from a table in the database
+ </summary>
+ <param name="lstTarget">Target Listbox to be populated</param>
+ <param name="strIDColumnName">The serverside primary key of the item</param>
+ <param name="strNameColumnName">The serverside name value of the item</param>
+ <param name="strTableName">The table to query</param>
+<param name="strCustomSql">Optional override for SQL string</param>
+ <remarks></remarks>
+ 
+</member>
+<member name="M:MainUtilitiesLibrary.MDatabaseUtilities.LoadBoxFromDatabase(System.Windows.Forms.ComboBox@,System.String,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Populates a list-type control from a table in the database
+ </summary>
+ <param name="cmbTarget">Target Listbox to be populated</param>
+ <param name="strIDColumnName">The serverside primary key of the item</param>
+ <param name="strNameColumnName">The serverside name value of the item</param>
+ <param name="strTableName">The table to query</param>
+<param name="strCustomSql">Optional override for SQL string</param>
+ <remarks></remarks>
+ 
+</member>
+<member name="M:MainUtilitiesLibrary.MDatabaseUtilities.LoadBoxFromDatabase(System.Windows.Forms.TextBox@,System.Int32,System.String,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Populates a list-type control from a table in the database
+ </summary>
+ <param name="txtTarget">Target Textbox to be filled</param>
+ <param name="intRecordID">The serverside value of the primary key</param>
+  <param name="strIDColumnName">The serverside primary key of the item</param>
+ <param name="strDataColumnName">The serverside name value of the item</param>
+ <param name="strTableName">The table to query</param>
+<param name="strCustomSql">Optional override for SQL string</param>
+ <remarks></remarks>
+ 
+</member>
+<member name="T:MainUtilitiesLibrary.MDatatableUtilities">
+ <summary>
+ Class MDatatableUtilities.
+ </summary>
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddColumnsToDataTable(System.Data.DataTable,System.Int32,System.String[])">
+ ------------------------------------------------------------------------------------------
+  Name: AddColumnsToDataTable
+  ------------------------------------------------------------------------------------------
+ <summary> Adds the columns to data table. </summary>
+ <param name="dtCurrent">The data table current.</param>
+ <param name="intColumnsToAdd">The int columns to add.</param>
+ <param name="astrNames">The astr names.</param>
+ <returns>DataTable.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddColumnsToDataTable(System.Data.DataTable,System.Data.DataColumn[])">
+ ------------------------------------------------------------------------------------------
+  Name: AddColumnsToDataTable
+  ------------------------------------------------------------------------------------------
+ <summary> Adds the columns to data table. </summary>
+ <param name="dtCurrent">The data table current.</param>
+ <param name="dcColumns">The dc columns.</param>
+ <returns>DataTable.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.RenameColumnsInDatatable(System.Data.DataTable,System.String[])">
+ ------------------------------------------------------------------------------------------
+  Name: RenameColumnsInDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Renames the columns in datatable. </summary>
+ <param name="dtCurrent">The data table current.</param>
+ <param name="astrNames">The astr names.</param>
+ <returns>DataTable.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.QueryDataTable(System.Data.DataTable,System.String,System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: QueryDataTable
+  ------------------------------------------------------------------------------------------
+ <summary> Queries the data table. </summary>
+ <param name="dtStartingTable">The data table starting table.</param>
+ <param name="strQuery">The string query.</param>
+ <param name="strSortBy">The string sort by.</param>
+ <returns>DataTable.</returns>
+ ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.ConvertDatatableToXML(System.Data.DataTable)">
+ ------------------------------------------------------------------------------------------
+  Name: ConvertDatatableToXML
+  ------------------------------------------------------------------------------------------
+ <summary> Convert a Datatable into a XML String </summary>
+ <param name="dtInput">Datatable to Convert</param>
+ <returns>XML String</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddFieldsToDatatable(System.Data.DataTable,System.Int32)">
+ ------------------------------------------------------------------------------------------
+  Name: AddFieldsToDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Add Any Number Of Fields to a Datatable. <br />
+ Returns Copy of Input Datatable with Fields added. </summary>
+ <param name="dtOriginal">Datatable To Add Fields to.</param>
+ <param name="intNumberOfFieldsToAdd">Number of Fields to Add to Table</param>
+ <returns>Datatable with fields added.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddFieldsToDatatable(System.Data.DataTable,System.String[])">
+ ------------------------------------------------------------------------------------------
+  Name: AddFieldsToDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Add Any Number Of Fields to a Datatable. <br />
+ Returns Copy of Input Datatable with Fields added. </summary>
+ <param name="dtOriginal">Datatable To Add Fields to.</param>
+ <param name="astrFieldNames">Parameter array containing names of fields.  If Fewer than number of fields to add Extra Columns will be added with numerical names.  Ex. Column1</param>
+ <returns>Datatable with fields added.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddFieldsToDatatable(System.Data.DataTable,System.Int32,System.String[])">
+ ------------------------------------------------------------------------------------------
+  Name: AddFieldsToDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Add Any Number Of Fields to a Datatable. <br />
+ Returns Copy of Input Datatable with Fields added. </summary>
+ <param name="dtOriginal">Datatable To Add Fields to.</param>
+ <param name="intNumberOfFieldsToAdd">Number of Fields to Add to Table</param>
+ <param name="astrFieldNames">Parameter array containing names of fields.  If Fewer than number of fields to add Extra Columns will be added with numerical names.  Ex. Column1</param>
+ <returns>Datatable with fields added.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddFieldsToDatatable(System.Data.DataTable,System.Int32,System.Boolean,System.String[])">
+ ------------------------------------------------------------------------------------------
+  Name: AddFieldsToDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Add Any Number Of Fields to a Datatable. <br />
+ Returns Copy of Input Datatable with Fields added. <br />
+ If String list contains Fewer strings than number of fields to add Extra Columns <br />
+ will be added with numerical names.  Ex. Column1<br /> </summary>
+ <param name="dtOriginal">Datatable To Add Fields to.</param>
+ <param name="intNumberOfFieldsToAdd">Number of Fields to Add to Table</param>
+ <param name="blnIgnoreExcessNames">Set True to ignore any names beyond number of fields to add</param>
+ <param name="astrFieldNames">Parameter array containing names of fields.</param>
+ <returns>Datatable with fields added.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.AddFieldToDatatable(System.Data.DataTable,System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: AddFieldToDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Adds a Single field to Datatable With Specific Field Name. <br />
+ Returns Datatable with field added. </summary>
+ <param name="dtOriginal">Datatable to Add Field to</param>
+ <param name="strFieldName">Name of Field to add</param>
+ <returns>Datatable with field added</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.ConvertDataTableToCSVString(System.Data.DataTable)">
+ ------------------------------------------------------------------------------------------
+  Name: ConvertDataTableToCSVString
+  ------------------------------------------------------------------------------------------
+ <summary> Converts the data table to CSV form string. </summary>
+ <param name="dtToConvert">The data table to convert.</param>
+ <returns>(String)The datatable in csv format.</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MDatatableUtilities.ConvertXMLtoDatatable(System.String)">
+ ------------------------------------------------------------------------------------------
+  Name: ConvertXMLtoDatatable
+  ------------------------------------------------------------------------------------------
+ <summary> Converts passed XML string into a datatable. </summary>
+ <param name="strXML">The XML to convert.</param>
+ <returns>DataTable</returns>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.GetArrayFromCollection(System.Collections.Generic.List{System.String})">
+ <summary>GetArrayFromCollection</summary>
+ <param name="coll"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.AddStringToArray(System.String[],System.String)">
+ <summary>AddStringToArray</summary>
+ <param name="astrOriginal"></param>
+ <param name="strToAdd"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.FindNextAvailableNumericalColumnNameInStringArray(System.String[])">
+ <summary>FindNextAvailableNumericalColumnNameInStringArray</summary>
+ <param name="astrArray"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.GetStringEquivelent(System.Int32)">
+ <summary>GetStringEquivelent</summary>
+ <param name="intInput">integer to get equivelent of</param>
+ <returns>letter equivelent, greater than 702 returns emptystring</returns>
+ <remarks>must be less then "ZZ" int702</remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.GetIndexFromLetter(System.Char)">
+ <summary>GetIndexFromLetter</summary>
+ <param name="chrInput">Character to get Alphabet Index of</param>
+ <returns>Index of letter in terms of the alphabet</returns>
+ <remarks>must be less then "ZZ" int702</remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.GetIndexFromLetter(System.String)">
+ <summary>GetIndexFromLetter</summary>
+ <param name="strInput">String to get Alphabet Index of</param>
+ <returns>Index of letter in terms of the alphabet</returns>
+ <remarks>If string is more than one character, it will only handle the first</remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.FindNextIncrement(System.Object,System.String,System.String,System.Int32,System.Boolean)">
+ <summary>FindNextIncrement</summary>
+ <param name="objItemsToCheck">List of objects to look for next increment in</param>
+ <param name="strPrefix">Optional - string prefix to numerical increment</param>
+ <param name="strSuffix">Optional - string suffix to numerical increment</param>
+ <param name="intMaxIncrement">Max increment to try to use</param>
+ <returns>String with Prefix + next available numerical value + Suffix</returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.OpenFile(System.String,System.String,System.Boolean)">
+ <summary>Open File in default application</summary>
+ <param name="strFilePath">Directory Path with or without filename</param>
+ <param name="strFileName">Filename if not part of path</param>
+ <param name="blnIgnoreException">False = show exception messagebox, default = true</param>
+ <returns>boolean of whether successful</returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.AddOrdinalSuffix(System.Int32)">
+ <summary>Add the Ordinal Suffix to a number (1 => 1st)</summary>
+ <param name="intInput">integer to convert</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.ExploreDirectoryForAllFiles(System.IO.DirectoryInfo,System.Boolean)">
+ <summary>
+ Runs through a directory and gets a list of files in it and all it's sub directories
+ </summary>
+ <param name="diMainDirectory">Directory to explore</param>
+ <param name="blnSeachSubDirectories">(Default = True)If set to false, will only explore current directory and not sub directories</param>
+ <returns>List of files</returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.ExploreDirectoryForAllSubDirectories(System.IO.DirectoryInfo,System.Boolean)">
+ <summary>
+ Runs through a directory and gets a list of all sub directories within it resursively
+ </summary>
+ <param name="diMainDirectory">Directory to explore</param>
+ <param name="blnSeachSubDirectories">(Default = True)If set to false, will only explore current directory and not sub directories</param>
+ <returns>List of subdirectories</returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.ExploreDirectoryForAllFiles(System.String,System.Boolean)">
+ <summary>
+ Runs through a directory and gets a list of files in it and all it's sub directories
+ </summary>
+ <param name="strMainDirectory">String address of Directory to explore</param>
+ <param name="blnSeachSubDirectories">(Default = True)If set to false, will only explore current directory and not sub directories</param>
+ <returns>List of files</returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.ExploreDirectoryForAllSubDirectories(System.String,System.Boolean)">
+ <summary>
+ Runs through a directory and gets a list of all sub directories within it resursively
+ </summary>
+ <param name="strMainDirectory">String address of Directory to explore</param>
+ <param name="blnSeachSubDirectories">(Default = True)If set to false, will only explore current directory and not sub directories</param>
+ <returns>List of subdirectories</returns>
+ <remarks></remarks>
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.SaveTextFile(System.String,System.String,MainUtilitiesLibrary.FileWriteExistOptions)">
+ ------------------------------------------------------------------------------------------
+  Name: SaveTextFile
+  ------------------------------------------------------------------------------------------
+ <summary> Saves the specified text to a text file. </summary>
+ <param name="strText">The text to write to file.</param>
+ <param name="strFileLocation">The file location (including FileName with extention).</param>
+ <param name="enuWriteExistOption">Write Exist Options</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.SaveTextFile(System.String,System.IO.DirectoryInfo,System.String,MainUtilitiesLibrary.FileWriteExistOptions)">
+ ------------------------------------------------------------------------------------------
+  Name: SaveTextFile
+  ------------------------------------------------------------------------------------------
+ <summary> Saves the specified text to a text file. </summary>
+ <param name="strText">The text to write to file.</param>
+ <param name="diLocation">The location as  <see cref="T:System.IO.DirectoryInfo">DirectoryInfo</see>.</param>
+ <param name="strFileName">Name of the text file with extension.</param>
+ <param name="enuWriteExistOption">Write Exist Options</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MGeneralUtilities.SaveTextFile(System.String,System.IO.FileInfo,MainUtilitiesLibrary.FileWriteExistOptions)">
+ ------------------------------------------------------------------------------------------
+  Name: SaveTextFile
+  ------------------------------------------------------------------------------------------
+ <summary> Saves the text file. </summary>
+ <param name="strText">The text to write to file.</param>
+ <param name="fiLocation">The location as <see cref="T:System.IO.FileInfo">FileInfo</see>.</param>
+ <param name="enuWriteExistOption">Write Exist Options</param>
+ <exception cref="T:System.Exception">File already exists. Possibly change FileWriteExistOption</exception>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.NameValuePair">
+ ------------------------------------------------------------------------------------------
+  Name: NameValuePair
+  ------------------------------------------------------------------------------------------
+ <summary>Structure for a String, Object Pair</summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.NameValuePair.Name">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets or sets the name/key. </summary>
+ <value>(String)The name/key</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="P:MainUtilitiesLibrary.NameValuePair.Value">
+ ------------------------------------------------------------------------------------------
+ <summary>Gets or sets the value. </summary>
+ <value>(Object)The value.</value>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.NameValuePair.#ctor(System.String,System.Object)">
+ ------------------------------------------------------------------------------------------
+  Constructor: Main
+  ------------------------------------------------------------------------------------------
+ <summary>Initializes a new instance of the <see cref="T:MainUtilitiesLibrary.NameValuePair"/> struct.</summary>
+ <param name="strName">Name of the string.</param>
+ <param name="objValue">The object value.</param>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.FormMode">
+ ------------------------------------------------------------------------------------------
+  Name: FormMode
+  ------------------------------------------------------------------------------------------
+ <summary>Contains various form mode identifiers</summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.MethodMode">
+ ------------------------------------------------------------------------------------------
+  Name: MethodMode
+  ------------------------------------------------------------------------------------------
+ <summary>Contains various method mode identifiers</summary>
+  ------------------------------------------------------------------------------------------
+</member>
+<member name="T:MainUtilitiesLibrary.CharacterValue">
+ ------------------------------------------------------------------------------------------
+ Name: CharacterValue
+ ------------------------------------------------------------------------------------------
+ <summary>Enum containing the 1-based alphabetical value of letters</summary>
+ ------------------------------------------------------------------------------------------
+</member>
+<member name="M:MainUtilitiesLibrary.MWebUtilities.PhotoBase64ImgSrc(System.String)">
+ <summary>Converts a photo to a base64 string.</summary>
+ <param name="fileNameandPath">File path and name.</param>
+ <returns>Returns a base64 string.</returns>
+</member>
+</members>
+</doc>

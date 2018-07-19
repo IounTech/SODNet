@@ -1,4 +1,5 @@
 ﻿using Facebook;
+using Nemiro.OAuth;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SOD2Compendium.Classes;
@@ -19,12 +20,38 @@ namespace SOD2Compendium
         public bool IsSubmitter = false;
         protected void Page_Init(object sender, EventArgs e)
         {
-            Classes.AllData.Update();
             SocialAPI fbAPI = new SocialAPI();
+            var provider = Request.QueryString["provider"];
+            if (provider == "google")
+            {
+                var result = OAuthWeb.VerifyAuthorization();
+                if (!result.IsSuccessfully)
+                {
+                    throw new UnauthorizedAccessException("Not authorized");
+                }
+
+                if (result.ProviderName != "Google")
+                {
+                    throw new NotSupportedException("Provider not supported");
+                }
+
+                fbAPI.AccessToken = result.AccessToken;
+                Submitter clsSubmitter = Submitter.GetSubmitterFromFBID("google-" + result.UserId, result.UserInfo.DisplayName);
+                Session["Submitter"] = clsSubmitter;
+                IsSubmitter = true;
+                btnFBLogin.OnClientClick = "return false;";
+                btnFBLogin.Text = ((Submitter)Session["Submitter"]).strName;
+                btnGoogleLogin.Visible = false;
+
+                return;
+            }
+
+
+            Classes.AllData.Update();
             string code = Request.QueryString["code"];
-#if DEBUG
-            Session["Submitter"] = Submitter.GetSubmitterFromFBID(Hidden.TestFBID, Hidden.TestFBName);
-#endif
+//#if DEBUG
+//            Session["Submitter"] = Submitter.GetSubmitterFromFBID(Hidden.TestFBID, Hidden.TestFBName);
+//#endif
 
             if (Session["Submitter"] == null)
             {
@@ -43,6 +70,8 @@ namespace SOD2Compendium
                     Session["Submitter"] = clsSubmitter;
                     btnFBLogin.OnClientClick = "return false;";
                     btnFBLogin.Text = clsSubmitter.strName;
+                    btnGoogleLogin.Visible = false;
+
                 }
             }
             else
@@ -50,6 +79,7 @@ namespace SOD2Compendium
                 IsSubmitter = true;
                 btnFBLogin.OnClientClick = "return false;";
                 btnFBLogin.Text = ((Submitter)Session["Submitter"]).strName;
+                btnGoogleLogin.Visible = false;
             }
 
         }
@@ -135,6 +165,12 @@ namespace SOD2Compendium
 
                 Response.Redirect(ppHref.ToString(), true);
             
+        }
+        public void btnGoogleLogin_Click(Object sender,
+                       EventArgs e)
+        {
+            SocialAPI socialApi = new SocialAPI();
+            OAuthWeb.RedirectToAuthorization("google", socialApi.RedirectURL + "?provider=google");
         }
     }
 }

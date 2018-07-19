@@ -22,7 +22,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-121212162-1');
+  gtag('config', 'UA-121212162-1', {
+      'link_attribution': true
+  });
 </script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -78,8 +80,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li style="height:100%"><asp:Button ID="btnFBLogin" Height="100%" runat="server" Text="Login With Facebook" CssClass="btn topbump btn-primary" OnClick="btnFBLogin_Click"/></li>
-                        
+                        <li style="height:100%"><asp:Button ID="btnFBLogin" Height="100%" runat="server" Text="FB" CssClass="btn topbump btn-primary" OnClick="btnFBLogin_Click"/></li>
+                        <li style="height:100%"><asp:Button ID="btnGoogleLogin" Height="100%" runat="server"  Text="Google" CssClass="btn topbump btn-primary" onclick="btnGoogleLogin_Click" /></li>
 
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Mods">Mods</a></li>

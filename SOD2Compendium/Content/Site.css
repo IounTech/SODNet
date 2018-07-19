@@ -28,7 +28,15 @@ textarea {
     .body-content {
         padding: 0;
     }
+
     table.table tr:nth-child(odd) {
         background-color: rgba(0,0,0,.05);
+    }
+
+    img {
+        max-height: 300px;
+        max-width: 300px;
+        height: auto;
+        width: auto;
     }
 }

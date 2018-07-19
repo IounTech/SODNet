@@ -27,6 +27,7 @@ namespace SOD2Compendium
             lblName.InnerText = clsMod.strName;
             lblDescription.Text = clsMod.strDescription.Replace("|lb|", "<br/>");
             Title = clsMod.strName;
+            imgScreenshot.ImageUrl = clsMod.strScreenshotLocation;
             rptFiles.DataSource = clsMod.lclsModFiles.Values;
             rptFiles.DataBind();
         }
