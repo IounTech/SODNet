@@ -85,6 +85,42 @@ namespace SOD2Compendium {
         protected global::System.Web.UI.WebControls.FileUpload fuModFiles;
         
         /// <summary>
+        /// lblFileVersion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFileVersion;
+        
+        /// <summary>
+        /// txtFileVersion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFileVersion;
+        
+        /// <summary>
+        /// lblFileDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFileDescription;
+        
+        /// <summary>
+        /// txtFileDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFileDescription;
+        
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>

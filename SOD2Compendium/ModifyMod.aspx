@@ -5,9 +5,13 @@
     <div class="form-group"><asp:Label ID="lblDescription" Text="Description:" runat="server"></asp:Label><asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" CssClass="form-control" Rows="5"></asp:TextBox></div>
     
     <div class="form-group"><asp:Label ID="lblScreenshot" Text="Screenshot URL:" runat="server"></asp:Label><asp:TextBox ID="txtScreenshot" runat="server" CssClass="form-control" ></asp:TextBox></div>
-    <div class="form-group"><asp:Label ID="Label1" Text="Files to Add:" runat="server"></asp:Label><asp:FileUpload ID="fuModFiles" runat="server" CssClass="form-control-file"/></div>
+    <div class="form-group"><asp:Label ID="lblFilesToAdd" Text="Files to Add:" runat="server"></asp:Label><asp:FileUpload ID="fuModFiles" runat="server" CssClass="form-control-file"/></div>
 
-    
+    <div class="form-group"><asp:Label ID="Label1" Text="Only used if adding new files:" runat="server"></asp:Label></div>
+
+     <div class="form-group"><asp:Label ID="lblFileVersion" Text="File Version:" runat="server"></asp:Label><asp:TextBox ID="txtFileVersion" runat="server"  CssClass="form-control" ></asp:TextBox></div>
+    <div class="form-group"><asp:Label ID="lblFileDescription" Text="File Description:" runat="server"></asp:Label><asp:TextBox ID="txtFileDescription" runat="server" TextMode="MultiLine" CssClass="form-control" Rows="5"></asp:TextBox></div>
+
 
     <table class="table table-bordered">
         <tr><td>Name</td><td>Version</td><td>Description</td><td>Save</td><td>Delete</td></tr>

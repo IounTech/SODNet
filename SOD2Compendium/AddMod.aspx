@@ -7,6 +7,8 @@
     <div class="form-group"><asp:Label ID="lblScreenshot" Text="Screenshot URL:" runat="server"></asp:Label><asp:TextBox ID="txtScreenshot" runat="server" CssClass="form-control" ></asp:TextBox></div>
 
         <div class="form-group"><asp:Label ID="lblFilesToAdd" Text="Files to Add:" runat="server"></asp:Label><asp:FileUpload ID="fuModFiles" runat="server" CssClass="form-control-file"/></div>
+    <div class="form-group"><asp:Label ID="lblFileVersion" Text="File Version:" runat="server"></asp:Label><asp:TextBox ID="txtFileVersion" runat="server"  CssClass="form-control" ></asp:TextBox></div>
+    <div class="form-group"><asp:Label ID="lblFileDescription" Text="File Description:" runat="server"></asp:Label><asp:TextBox ID="txtFileDescription" runat="server" TextMode="MultiLine" CssClass="form-control" Rows="5"></asp:TextBox></div>
 
 
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-success" OnClick="btnSave_Click"/>

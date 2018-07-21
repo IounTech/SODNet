@@ -55,11 +55,25 @@ namespace SOD2Compendium
             {
                 ModFile clsModFile = clsMod.lclsModFiles[clsMod.lclsModFiles.Keys.ToArray()[(e.Item.ItemIndex)]];
                 MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;
+                string strFileLocation = clsModFile.strLocation;
+                if (clsModFile.strVersion != ((System.Web.UI.WebControls.TextBox)e.Item.Controls[1]).Text)
+                {
+                    FileInfo fiModFile = new FileInfo(clsModFile.strLocation);
+#if DEBUG
+                     strFileLocation = @"C:\Dev\ModFiles\" + txtName.Text + @"\" + ((System.Web.UI.WebControls.TextBox)e.Item.Controls[1]).Text + @"\" + clsModFile.strName;
+#else
+                     strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\" +  ((System.Web.UI.WebControls.TextBox)e.Item.Controls[1]).Text  + @"\" + clsModFile.strName;
+#endif
+                    FileInfo fiToLocation = new FileInfo(strFileLocation);
+                    fiToLocation.Directory.Create();
+                    fiModFile.MoveTo(strFileLocation);
+                }
 
                 List<CStoredProcedureParameter> lclsParameters = new List<CStoredProcedureParameter>();
                 lclsParameters.Add(new CStoredProcedureParameter("@intModFileID", clsModFile.intID));
                 lclsParameters.Add(new CStoredProcedureParameter("@strDescription", ((System.Web.UI.WebControls.TextBox)e.Item.Controls[3]).Text));
                 lclsParameters.Add(new CStoredProcedureParameter("@strVersion", ((System.Web.UI.WebControls.TextBox)e.Item.Controls[1]).Text));
+                lclsParameters.Add(new CStoredProcedureParameter("@strLocation", strFileLocation));
                 MDatabaseUtilities.ExecuteStoredProcedure("uspUpdateModFile", lclsParameters.ToArray());
                 Classes.AllData.IsDirty = true;
             }
@@ -99,9 +113,9 @@ namespace SOD2Compendium
                 {
 
 #if DEBUG
-                    string strFileLocation = @"C:\Dev\ModFiles\" + txtName.Text + @"\" + hpfFile.FileName;
+                    string strFileLocation = @"C:\Dev\ModFiles\" + txtName.Text + @"\" + txtFileVersion.Text + @"\" + hpfFile.FileName;
 #else
-                     string strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\"+ hpfFile.FileName;
+                    string strFileLocation = @"C:\inetpub\wwwroot\SOD\ModFiles\" + txtName.Text + @"\" + txtFileVersion.Text + @"\" + hpfFile.FileName;
 #endif
                     FileInfo fiFile = new FileInfo(strFileLocation);
                     fiFile.Directory.Create();
@@ -110,9 +124,9 @@ namespace SOD2Compendium
                     lclsParameters.Clear();
                     lclsParameters.Add(new CStoredProcedureParameter("@intModID", int.Parse(Request.QueryString["ID"])));
                     lclsParameters.Add(new CStoredProcedureParameter("@strName", hpfFile.FileName));
-                    lclsParameters.Add(new CStoredProcedureParameter("@strVersion", "0"));
+                    lclsParameters.Add(new CStoredProcedureParameter("@strVersion", txtFileVersion.Text));
                     lclsParameters.Add(new CStoredProcedureParameter("@strLocation", strFileLocation));
-                    lclsParameters.Add(new CStoredProcedureParameter("@strDescription", ""));
+                    lclsParameters.Add(new CStoredProcedureParameter("@strDescription", txtFileDescription.Text));
                     lclsParameters.Add(new CStoredProcedureParameter("@intSubmitterID", ((Classes.Submitter)Session["Submitter"]).intID));
                     MDatabaseUtilities.ExecuteStoredProcedure("uspAddModFile", lclsParameters.ToArray());
                 }
