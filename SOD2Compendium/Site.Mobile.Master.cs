@@ -123,7 +123,7 @@ namespace SOD2Compendium
 
         protected void btnPayPal_Click(object sender, ImageClickEventArgs e)
         {
-
+            //Process Paypal
             string business = "djhughes@iountech.com";
             string itemName = "Help support development!";
             double itemAmount = 0;
