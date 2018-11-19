@@ -14,6 +14,7 @@ namespace SOD2Compendium.Classes
         public string strDescription = "";
         public string strNotes = "";
         public string strScreenshotLocation = "";
+        public HeroBonus clsHeroBonus;
         public int intSubmitterID;
         public Dictionary<int,
             TraitEffect> Effects = new Dictionary<int, TraitEffect>();
@@ -32,6 +33,7 @@ namespace SOD2Compendium.Classes
                     strDescription = (string)drRow["strDescription"],
                     strNotes = (string)drRow["strNotes"],
                     strScreenshotLocation = (string)drRow["strScreenshotLocation"],
+                    clsHeroBonus = AllData.HeroBonuses[(int)drRow["intHeroBonusID"]],
                     intSubmitterID = (int)drRow["intSubmitterID"]
                 };
                 lclsTraits.Add(clsNewTrait.intID, clsNewTrait);

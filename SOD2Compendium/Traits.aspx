@@ -4,7 +4,7 @@
     <asp:TextBox ID="txtSearch" runat="server" placeholder="Search Traits..."></asp:TextBox><br />
     <asp:CheckBox ID="chkMissingScreenshots" runat="server" Text="Missing Screenshots" AutoPostBack="true"/>
     <table class="table table-bordered">
-        <tr><td><b>Name</b></td><td><b>Effects</b></td><td><b>Description</b></td></b></tr>
+        <tr><td><b>Name</b></td><td><b>Effects</b></td><td><b>Hero Bonus</b></td><td><b>Description</b></td></b></tr>
         <asp:Repeater ID="rptTraits" runat="server">
             <ItemTemplate>
                 <tr>
@@ -18,6 +18,9 @@
                                 <br />
                             </ItemTemplate>
                         </asp:Repeater>
+                    </td>
+                    <td>
+                        <%# (Container.DataItem as SOD2Compendium.Classes.Trait).clsHeroBonus.strName %>
                     </td>
                     <td>
                         <%# (Container.DataItem as SOD2Compendium.Classes.Trait).strDescription %>

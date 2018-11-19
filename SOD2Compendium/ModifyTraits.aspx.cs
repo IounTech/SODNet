@@ -36,7 +36,16 @@ namespace SOD2Compendium
                 rptEffects.DataBind();
                 hlScreenshot.NavigateUrl = clsTrait.strScreenshotLocation;
                 txtScreenshot.Text = clsTrait.strScreenshotLocation;
-                if(clsTrait.strScreenshotLocation == "")
+                cmbLinkedHeroBonus.DataSource = Classes.AllData.HeroBonuses;
+                cmbLinkedHeroBonus.DataValueField = "Key";
+                cmbLinkedHeroBonus.DataTextField = "Value";
+                cmbLinkedHeroBonus.DataBind();
+                if (clsTrait.clsHeroBonus != null)
+                {
+                    cmbLinkedHeroBonus.SelectedValue = clsTrait.clsHeroBonus.intID.ToString();
+                }
+
+                if (clsTrait.strScreenshotLocation == "")
                 {
                     hlScreenshot.Visible = false;
                 }
@@ -66,6 +75,7 @@ namespace SOD2Compendium
             lclsParameters.Add(new CStoredProcedureParameter("@strDescription", txtDescription.Text));
             lclsParameters.Add(new CStoredProcedureParameter("@strNotes", txtNotes.Text));
             lclsParameters.Add(new CStoredProcedureParameter("@ScreenshotLocation", txtScreenshot.Text));
+            lclsParameters.Add(new CStoredProcedureParameter("@intHeroBonusID", UExtensionLibrary.Numerics.Numerics.Val( cmbLinkedHeroBonus.SelectedValue)));
             lclsParameters.Add(new CStoredProcedureParameter("@intSubmitterID", ((Classes.Submitter)Session["Submitter"]).intID));
             MDatabaseUtilities.ExecuteStoredProcedure("uspUpsertTrait", lclsParameters.ToArray());
             Classes.AllData.IsDirty = true;

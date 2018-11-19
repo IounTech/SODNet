@@ -31,12 +31,12 @@ namespace SOD2Compendium.Classes
                 if (IsDirty)
                 {
                     EffectTypes = EffectType.GetAllEffectTypes();
+                    HeroBonuses = HeroBonus.GetAllHeroBonuses();
                     Traits = Trait.GetAllTraits();
                     TraitEffect.AddAllTraitEffectsToTraits();
                     AmmoTypes = AmmoType.GetAllAmmoTypes();
                     GunTypes = GunType.GetAllGunTypes();
                     Guns = Gun.GetAllGuns();
-                    HeroBonuses = HeroBonus.GetAllHeroBonuses();
                     Items = Item.GetAllItems();
                     Maps = Map.GetAllMaps();
                     Sizes = Size.GetAllSizes();

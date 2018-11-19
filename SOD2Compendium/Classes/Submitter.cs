@@ -17,6 +17,9 @@ namespace SOD2Compendium.Classes
 
         public static Submitter GetSubmitterFromFBID(string strFBID,string strName)
         {
+            NLog.LogManager.GetCurrentClassLogger().Debug("Name:" + strName);
+            if (strName == null) strName = "NAME ERROR";
+
             Submitter clsReturn = new Submitter();
 
             MDatabaseUtilities.strCurrentConnectionString = Hidden.ExternalConnection;

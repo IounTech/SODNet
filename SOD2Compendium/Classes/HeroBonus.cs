@@ -42,6 +42,10 @@ namespace SOD2Compendium.Classes
 
             return lclsHeroBonuss;
         }
+        public override string ToString()
+        {
+            return strName;
+        }
     }
 
    

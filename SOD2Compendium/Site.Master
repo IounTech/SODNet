@@ -98,7 +98,10 @@
             </div>
         </div>
         <div class="container body-content">
-            <div>Got a suggestion or problem about the site? Join the <a href="https://discord.gg/XCS7Qpp">Discord</a>! </div>
+            <div>Got a suggestion or problem about the site? Join the <a href="https://discord.gg/XCS7Qpp">Discord</a>! <br />
+                Consider hitting the donate button at the bottom of the page to help keep the site going, and encourage further development.
+                <br /> If you donate and want to see a specific feature or have a request, add it as a message and I'll do my best to hop right on it.
+            </div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
